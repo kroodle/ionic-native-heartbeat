@@ -6,6 +6,7 @@
 
         var heartbeat;
         var service = {
+          isAvailable: isAvailable,
           start: start,
           stop: stop,
         };
@@ -36,6 +37,10 @@
               $rootScope.$emit('$cordovaHeartbeat:hrv', hrv);
             });
           });
+        }
+
+        function isAvailable() {
+          return ($window.Heartbeat ? true : false);
         }
 
         function start() {
