@@ -1,0 +1,17 @@
+{
+  "name": "ng-cordova-heartbeat",
+  "version": "1.0.0",
+  "description": "Simple AngularJS wrapper for Cordova Heartbeat",
+  "private": true,
+  "main": "heartbeat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/kroodle/ng-cordova-heartbeat.git"
+  },
+  "author": "Koen Romers <info@koenromers.com>",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/kroodle/ng-cordova-heartbeat#readme"
+}
