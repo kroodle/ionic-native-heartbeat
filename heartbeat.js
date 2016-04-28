@@ -3,70 +3,54 @@
    if(typeof angular !== 'undefined'){
      angular.module('ngCordova.plugins.heartbeat', [])
       .factory('$cordovaHeartbeat', ['$timeout', '$window', function ($q, $window) {
+        var heartbeat;
         return {
-          start: function() {
-            return $window.Heartbeat.start();
-          },
-          stop: function() {
-            return $window.Heartbeat.stop();
-          },
-          onBpm: function () {
+          _init: function() {
+            heartbeat = $window.Heartbeat;
             $timeout(function () {
-              $window.Heartbeat.on('bpm', function (bpm) {
+              heartbeat.on('bpm', function (bpm) {
                 $rootScope.$emit('$cordovaHeartbeat:bpm', bpm);
               });
-            });
-          },
-          onProgress: function () {
-            $timeout(function () {
-              $window.Heartbeat.on('percentage', function (percentage) {
+              heartbeat.on('percentage', function (percentage) {
                 $rootScope.$emit('$cordovaHeartbeat:progress', percentage);
               });
-            });
-          },
-          onGraphUpdate: function () {
-            $timeout(function () {
-              $window.Heartbeat.on('graph', function (graph) {
+              heartbeat.on('graph', function (graph) {
                 $rootScope.$emit('$cordovaHeartbeat:graphUpdate', graph);
               });
-            });
-          },
-          onStatusChange: function () {
-            $timeout(function () {
-              $window.Heartbeat.on('status', function (status) {
+              heartbeat.on('status', function (status) {
                 $rootScope.$emit('$cordovaHeartbeat:statusChange', status);
               });
-            });
-          },
-          onWarning: function () {
-            $timeout(function () {
-              $window.Heartbeat.on('warning', function (warning) {
+              heartbeat.on('warning', function (warning) {
                 $rootScope.$emit('$cordovaHeartbeat:warning', warning);
               });
-            });
-          },
-          onError: function () {
-            $timeout(function () {
-              $window.Heartbeat.on('error', function (error) {
+              heartbeat.on('error', function (error) {
                 $rootScope.$emit('$cordovaHeartbeat:error', error);
               });
-            });
-          },
-          onHrv: function () {
-            $timeout(function () {
-              $window.Heartbeat.on('hrv', function (hrv) {
+              heartbeat.on('hrv', function (hrv) {
                 $rootScope.$emit('$cordovaHeartbeat:hrv', hrv);
               });
             });
           },
+          start: function() {
+            _init();
+            var q = $q.defer();
+            heartbeat.start();
+            q.resolve(heartbeat);
+            return q.promise;
+          },
+          stop: function() {
+            var q = $q.defer();
+            if (heartbeat === undefined) {
+              q.reject(new Error('start must be called before any other operation'));
+            } else {
+              heartbeat.stop();
+              q.resolve(heartbeat);
+            }
+            return q.promise;
+          }
         };
       }]);
-      // .run(['$injector', function ($injector) {
-      //   $injector.get('$cordovaHeartbeat'); // Ensure the factory always gets initialised
-      // }]);
-
      angular.module('ngCordova.plugins').requires.push('ngCordova.plugins.heartbeat');
-     console.log('[Heartbeat]: ngCordova plugin loaded');
    }
   } finally { }
 })();
