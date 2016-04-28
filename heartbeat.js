@@ -2,7 +2,7 @@
   try {
    if(typeof angular !== 'undefined'){
      angular.module('ngCordova.plugins.heartbeat', [])
-      .factory('$cordovaHeartbeat', ['$timeout', '$window', function ($q, $window) {
+      .factory('$cordovaHeartbeat', ['$timeout','$window','$q', function ($timeout, $window, $q) {
 
         var heartbeat;
         var service = {
@@ -45,7 +45,7 @@
           q.resolve(heartbeat);
           return q.promise;
         }
-        
+
         function stop(){
           var q = $q.defer();
           if (heartbeat === undefined) {
