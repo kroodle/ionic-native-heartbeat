@@ -18,7 +18,7 @@
             heartbeat.on('bpm', function (bpm) {
               $rootScope.$emit('$cordovaHeartbeat:bpm', bpm);
             });
-            heartbeat.on('percentage', function (percentage) {
+            heartbeat.on('progress', function (percentage) {
               $rootScope.$emit('$cordovaHeartbeat:progress', percentage);
             });
             heartbeat.on('graph', function (graph) {

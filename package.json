@@ -1,6 +1,6 @@
 {
   "name": "ng-cordova-heartbeat",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple AngularJS wrapper for Cordova Heartbeat",
   "private": true,
   "main": "heartbeat.js",
