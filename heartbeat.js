@@ -44,7 +44,9 @@
         }
 
         function start() {
-          _init();
+          if (!heartbeat) {
+            _init();
+          }
           var q = $q.defer();
           heartbeat.start();
           q.resolve(heartbeat);
@@ -53,7 +55,7 @@
 
         function stop(){
           var q = $q.defer();
-          if (heartbeat === undefined) {
+          if (!heartbeat) {
             q.reject(new Error('start must be called before any other operation'));
           } else {
             heartbeat.stop();
