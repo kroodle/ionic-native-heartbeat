@@ -9,6 +9,8 @@
           isAvailable: isAvailable,
           start: start,
           stop: stop,
+          setPointsForGraph: setPointsForGraph,
+          setMeasureTime: setMeasureTime,
         };
         return service;
 
@@ -63,6 +65,15 @@
           }
           return q.promise;
         }
+
+        function setPointsForGraph(points) {
+          heartbeat.setPointsForGraph(points);
+        }
+
+        function setMeasureTime(measureTime) {
+          heartbeat.setMeasureTime(measureTime);
+        }
+
       }]);
      angular.module('ngCordova.plugins').requires.push('ngCordova.plugins.heartbeat');
    }
