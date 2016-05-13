@@ -67,10 +67,16 @@
         }
 
         function setPointsForGraph(points) {
+          if (!heartbeat) {
+            _init();
+          }
           heartbeat.setPointsForGraph(points);
         }
 
         function setMeasureTime(measureTime) {
+          if (!heartbeat) {
+            _init();
+          }
           heartbeat.setMeasureTime(measureTime);
         }
 
