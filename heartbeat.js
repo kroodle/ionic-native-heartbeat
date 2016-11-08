@@ -1,7 +1,7 @@
 (function(){
   try {
    if(typeof angular !== 'undefined'){
-     angular.module('ngCordova.plugins.heartbeat', [])
+     angular.module('ionic.native.heartbeat', [])
       .factory('$cordovaHeartbeat', ['$timeout','$window','$q','$rootScope', function ($timeout, $window, $q, $rootScope) {
 
         var heartbeat;
@@ -81,7 +81,7 @@
         }
 
       }]);
-     angular.module('ngCordova.plugins').requires.push('ngCordova.plugins.heartbeat');
+     angular.module('ionic.native').requires.push('ionic.native.heartbeat');
    }
   } finally { }
 })();

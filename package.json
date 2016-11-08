@@ -1,7 +1,7 @@
 {
-  "name": "ng-cordova-heartbeat",
-  "version": "1.0.9",
-  "description": "Simple AngularJS wrapper for Cordova Heartbeat",
+  "name": "ionic-native-heartbeat",
+  "version": "2.0.0",
+  "description": "Simple Ionic Native plugin for Cordova Heartbeat",
   "private": true,
   "main": "heartbeat.js",
   "scripts": {
@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/kroodle/ng-cordova-heartbeat.git"
+    "url": "git+ssh://git@bitbucket.org/kroodle/ionic-native-heartbeat.git"
   },
   "author": "Koen Romers <info@koenromers.com>",
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/kroodle/ng-cordova-heartbeat#readme"
+  "homepage": "https://bitbucket.org/kroodle/ionic-native-heartbeat#readme"
 }
