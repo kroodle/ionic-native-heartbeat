@@ -11,6 +11,7 @@
           stop: stop,
           setPointsForGraph: setPointsForGraph,
           setMeasureTime: setMeasureTime,
+          getBatteryLevel: getBatteryLevel,
         };
         return service;
 
@@ -37,6 +38,9 @@
             });
             heartbeat.on('hrv', function (hrv) {
               $rootScope.$emit('$cordovaHeartbeat:hrv', hrv);
+            });
+            heartbeat.on('hr', function (hr) {
+              $rootScope.$emit('$cordovaHeartbeat:hr', hr);
             });
           });
         }
@@ -78,6 +82,13 @@
             _init();
           }
           heartbeat.setMeasureTime(measureTime);
+        }
+
+        function getBatteryLevel() {
+          if (!heartbeat) {
+            _init();
+          }
+          heartbeat.getBatteryLevel();
         }
 
       }]);
