@@ -1,6 +1,6 @@
 {
   "name": "ionic-native-heartbeat",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Simple Ionic Native plugin for Cordova Heartbeat",
   "private": true,
   "main": "heartbeat.js",
