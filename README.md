@@ -1,10 +1,10 @@
 # Ionic Native plugin for Cordova Heartbeat Plugin
-Simple Ionic wrapper for [Cordova Heartbeat Plugin](https://bitbucket.org/kroodle/cordova-plugin-heartbeat).
+Simple Ionic wrapper for [Cordova Heartbeat Plugin](https://github.com/kroodle/cordova-plugin-heartbeat).
 
 ## Installation
 ```
 #!bash
-$ npm install git+ssh://git@bitbucket.org/kroodle/ionic-native-heartbeat.git
+$ npm install ionic-native-heartbeat
 ```
 
 ## Basic Usage

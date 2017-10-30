@@ -2,16 +2,15 @@
   "name": "ionic-native-heartbeat",
   "version": "2.1.0",
   "description": "Simple Ionic Native plugin for Cordova Heartbeat",
-  "private": true,
   "main": "heartbeat.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/kroodle/ionic-native-heartbeat.git"
+    "url": "git+ssh://git@github.com/kroodle/ionic-native-heartbeat.git"
   },
   "author": "Koen Romers <info@koenromers.com>",
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/kroodle/ionic-native-heartbeat#readme"
+  "homepage": "https://github.com/kroodle/ionic-native-heartbeat#readme"
 }
